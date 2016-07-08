@@ -1,15 +1,17 @@
-# mydatepicker v. 0.0.12
+# Angular2-datepicker v. 1.0.0
+
+This is fork of https://github.com/kekeh/mydatepicker with slight design change. Intend to implement transition to make it look like Material Datepicker
 
 **Angular 2 date picker - Angular2 reusable UI component**
 
 ## Description
 Simple Angular2 date picker.
 
-![alt text](https://github.com/kekeh/mydatepicker/blob/master/image/mydatepicker-normal-image.png "mydatepicker normal mode")
+![alt text](https://github.com/akmittal/angular2-datepicker/blob/master/image/mydatepicker-normal-image.png "mydatepicker normal mode")
 
 Image 1. _mydatepicker in normal mode._
 
-![alt text](https://github.com/kekeh/mydatepicker/blob/master/image/mydatepicker-inline-image.png "mydatepicker inline mode")
+![alt text](https://github.com/akmittal/angular2-datepicker/blob/master/image/mydatepicker-inline-image.png "mydatepicker inline mode")
 
 Image 2. _mydatepicker in inline mode._
 
