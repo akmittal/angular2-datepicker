@@ -19,7 +19,9 @@
         max-width: 262px;
         padding: 3px;
         z-index: 100;
+        background: #fff;
         box-shadow: 0px 2px 5px rgba(0,0,0,0.25);
+        width: 100%;
     }
     .inlinedp {
         position: relative;
@@ -37,7 +39,7 @@
         position: absolute;
         width: 100%;
         text-align: left;
-        font-size: 18px;
+        font-size: 14px;
         font-weight: bold;
         padding: 0 64px 0 4px;
         overflow: hidden;
@@ -65,6 +67,7 @@
         outline: 0;
         font: inherit;
         -moz-user-select: none;
+        user-select: none
     }
     .btnpicker, .btnclear, .headertodaybtn, .footerbtn {
         background: #FAFAFA;
@@ -104,14 +107,14 @@
         color: rgba(0,0,0,0.87);
         line-height: 1.1;
         thead{
-          padding: 5px 2px;
+            padding: 5px 2px;
         }
         th, td {
             border-collapse: collapse;
             line-height: 1.8;
         }
         th, td {
-            padding: 5px;
+            padding: 0px;
             text-align: center;
         }
         th {
@@ -130,6 +133,7 @@
     }
     .currmonth {
         background-color: #F6F6F6;
+        padding: 5px;
     }
     .currday div {
         font-weight: 600;
@@ -143,15 +147,13 @@
     }
     .caltable tbody .currmonth:hover {
         background-color: rgb(224,224,224);
-        border-radius: 100%;
+        //border-radius: 100%;
     }
+    
     .disabled {
         cursor: default !important;
         color: #CCC !important;
         background: #FFF0F0 !important;
-    }
-    .sunday {
-
     }
     .selectmenu {
         height: 24px;
@@ -163,14 +165,6 @@
         display: table-cell;
     }
 
-    .table {
-        th, td {
-
-        }
-    }
-    .headertodaybtn, .caltable tbody {
-
-    }
     .btnpicker, .btnclear, .headerbtn, .headermonthtxt, .headeryeartxt, .headertodaybtn, .selection {
         color: #000;
     }
@@ -213,7 +207,6 @@
     }
     .icon {
         font-family: 'mydatepicker';
-        speak: none;
         font-style: normal;
         font-weight: normal;
         font-variant: normal;
@@ -223,6 +216,7 @@
         -moz-osx-font-smoothing: grayscale;
     }
     .icon-calendar:before {
+        font-size: 18px;
         content: "\e600";
     }
     .icon-cross:before {
@@ -234,8 +228,43 @@
     .icon-right:before {
         content: "\e607";
     }
-}
+    .icon-clock:before{
+        font-size: 20px;
+        content: "\1f550";
+    }
+    .icon-arrow-up:before{
+        content: "\25B2";
+    }
+    .icon-arrow-down:before{
+        content: "\25BC";
+    }
 
+    .timepicker{
+        margin: auto;
+        table-layout: fixed;
+        width: 100%;
+        padding: 5px 0px;
+    }
+    .hide{
+        display: none;
+    }
+    .action:hover{
+        cursor: pointer;
+        background: #f1f1f1;
+    }
+    .padding{
+        padding: 20px 50px;
+    }
+}
+.transition{
+   opacity: 1;
+    transition: opacity 1s;
+}
+.placeholder{
+    color: #777 !important;
+    font-weight: 400 !important;
+    text-align: start !important;
+}
 @font-face {
     font-family: 'mydatepicker';
     src: url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SAssAAAC8AAAAYGNtYXDMUczTAAABHAAAAGxnYXNwAAAAEAAAAYgAAAAIZ2x5ZmFQ1q4AAAGQAAABbGhlYWQGZuTFAAAC/AAAADZoaGVhB4IDyQAAAzQAAAAkaG10eBYAAnAAAANYAAAAIGxvY2EBdAE0AAADeAAAABJtYXhwABUAPgAAA4wAAAAgbmFtZQ5R9RkAAAOsAAABnnBvc3QAAwAAAAAFTAAAACAAAwOaAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADmBwPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAUAAAABAAEAADAAAAAQAg5gDmAuYF5gf//f//AAAAAAAg5gDmAuYF5gf//f//AAH/4xoEGgMaARoAAAMAAQAAAAAAAAAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAAMAEAAAAPAA4AABAAJAA4AEwAYAB0AIgAnACwAMQA2ADsAABMRMxEjFyE1IRUDITUhFQERMxEjJRUzNSMTFTM1IzMVMzUjMxUzNSMBFTM1IzMVMzUjMxUzNSMTFTM1I0Bzc0ADAP0AQAOA/IADDXNz/ZOAgCCAgMCAgMCAgP6AgIDAgIDAgIAggIADAP1AAsBzc3P9c3NzAwD9QALAgMDA/sCAgICAgID/AICAgICAgAJAwMAAAAAAAgBwADADkANQAAQACQAANwEnARcDATcBB+kCp3n9WXl5Aqd5/Vl5MAKnef1ZeQKn/Vl5Aqd5AAABAOAAAAMgA4AAAwAAAQMBJQMgA/3DASADgPyAAcPfAAEA4AAAAyADgAADAAA3EwEF4AMCPf7gAAOA/j3fAAAAAQAAAAEAAF0/BsNfDzz1AAsEAAAAAADRxFAkAAAAANHEUCQAAAAAA8ADgAAAAAgAAgAAAAAAAAABAAADwP/AAAAEAAAAAAADwAABAAAAAAAAAAAAAAAAAAAACAQAAAAAAAAAAAAAAAIAAAAEAABABAAAcAQAAOAEAADgAAAAAAAKABQAHgB6AJYApgC2AAAAAQAAAAgAPAAMAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA4ArgABAAAAAAABAAkAAAABAAAAAAACAAcAcgABAAAAAAADAAkAPAABAAAAAAAEAAkAhwABAAAAAAAFAAsAGwABAAAAAAAGAAkAVwABAAAAAAAKABoAogADAAEECQABABIACQADAAEECQACAA4AeQADAAEECQADABIARQADAAEECQAEABIAkAADAAEECQAFABYAJgADAAEECQAGABIAYAADAAEECQAKADQAvHZzZHBpY2tlcgB2AHMAZABwAGkAYwBrAGUAclZlcnNpb24gMS4wAFYAZQByAHMAaQBvAG4AIAAxAC4AMHZzZHBpY2tlcgB2AHMAZABwAGkAYwBrAGUAcnZzZHBpY2tlcgB2AHMAZABwAGkAYwBrAGUAclJlZ3VsYXIAUgBlAGcAdQBsAGEAcnZzZHBpY2tlcgB2AHMAZABwAGkAYwBrAGUAckZvbnQgZ2VuZXJhdGVkIGJ5IEljb01vb24uAEYAbwBuAHQAIABnAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAEkAYwBvAE0AbwBvAG4ALgAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=) format("truetype");

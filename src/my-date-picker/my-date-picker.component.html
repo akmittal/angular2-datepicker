@@ -1,13 +1,17 @@
-<div class="mydp" [ngStyle]="{'height': height, 'width': width, 'border': inline ? 'none' : '1px solid #AAA'}">
+<div class="mydp" [ngStyle]="{ 'width': width, 'border': inline ? 'none' : '1px solid #AAA'}">
     <div class="selectiongroup" *ngIf="!inline">
-        <span class="selection" [ngStyle]="{'height': height, 'line-height': height}" (click)="openBtnClicked()">{{selectionDayTxt}}</span>
+        <span class="selection" [ngStyle]="{'height': height, 'line-height': height}" [ngClass]="{'placeholder':selectionDayTxt.indexOf('Date')!=-1}" (click)="openBtnClicked()">{{selectionDayTxt}}</span>
         <span class="selbtngroup" [style.height]="height">
-            <button type="button" class="btnclear" *ngIf="selectionDayTxt.length>0" (click)="removeBtnClicked()"><span class="icon icon-cross"></span></button>
+            <button type="button" class="btnclear" *ngIf="selectionDayTxt.indexOf('Date')==-1" (click)="removeBtnClicked()"><span
+                    class="icon icon-cross"></span></button>
             <button type="button" class="btnpicker" (click)="openBtnClicked()"><span class="icon icon-calendar"></span></button>
         </span>
     </div>
     <div class="selector" *ngIf="showSelector||inline" [ngClass]="{'inlinedp': inline}">
-        <table class="header">
+        <div class="timepicker text-center action" [ngClass]="{'hide':!showTime}" (click)="toggleTime()">
+            <span class="icon icon-calendar"></span>
+        </div>
+        <table class="header" *ngIf="!showTime">
             <tr>
                 <td>
                     <div style="float:left">
@@ -28,15 +32,31 @@
                 </td>
             </tr>
         </table>
-        <table class="caltable">
-            <thead><tr><th *ngFor="let d of weekDays">{{d}}</th></tr></thead>
+        <table class="caltable" *ngIf="!showTime">
+            <thead>
+            <tr>
+                <th *ngFor="let d of weekDays">{{d}}</th>
+            </tr>
+            </thead>
             <tbody>
-                <tr *ngFor="let w of dates">
-                    <td *ngFor="let d of w" [ngClass]="{'currmonth':d.cmo===CURR_MONTH&&!d.disabled, 'currday':d.currDay, 'selectedday':selectedDate.day===d.dateObj.day && selectedDate.month===d.dateObj.month && selectedDate.year===d.dateObj.year && d.cmo===CURR_MONTH, 'disabled': d.disabled}" (click)="$event.stopPropagation();!d.disabled && cellClicked(d)">
-                        <div style="background-color:inherit" [ngClass]="{'prevmonth':d.cmo===PREV_MONTH,'currmonth':d.cmo===CURR_MONTH,'nextmonth':d.cmo===NEXT_MONTH,'sunday':d.dayNbr === 0 && sunHighlight}">{{d.dateObj.day}}</div>
-                    </td>
-                </tr>
+            <tr *ngFor="let w of dates">
+                <td *ngFor="let d of w"
+                    [ngClass]="{'currmonth':d.cmo===CURR_MONTH && !d.disabled, 'currday':d.currDay, 'selectedday':selectedDate.day===d.dateObj.day && selectedDate.month===d.dateObj.month && selectedDate.year===d.dateObj.year && d.cmo===CURR_MONTH, 'disabled': d.disabled}"
+                    (click)="$event.stopPropagation();!d.disabled && cellClicked(d)">
+                    <div style="background-color:inherit"
+                         [ngClass]="{'prevmonth':d.cmo===PREV_MONTH,'currmonth':d.cmo===CURR_MONTH,'nextmonth':d.cmo===NEXT_MONTH,'sunday':d.dayNbr === 0 && sunHighlight}">
+                        {{d.dateObj.day}}
+                    </div>
+                </td>
+            </tr>
             </tbody>
+
         </table>
+        <div class="timepicker padding" [ngClass]="{'transition':showTime}" [hidden]="!showTime">
+          <timepicker [(ngModel)]="time" (ngModelChange)="changed($event)" [hourStep]="hstep" [minuteStep]="mstep" [showMeridian]="ismeridian"></timepicker>
+        </div>
+        <div class="timepicker text-center action" [ngClass]="{'hide':showTime}" (click)="toggleTime()">
+            <span class="icon icon-clock"></span>
+        </div>
     </div>
 </div>

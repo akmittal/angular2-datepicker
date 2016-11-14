@@ -17,11 +17,24 @@ module.exports = {
     devtool: 'source-map',
 
     module: {
-        loaders: [
-            {test: /\.ts$/, exclude: [/\.spec\.ts$/, /node_modules/], loader: 'ts'},
-            {test: /\.html$/, loader: 'raw'},
-            {test: /\.scss$/, include: [path.resolve(__dirname, 'src')], loader: 'raw!postcss-loader!sass'}
-        ],
+        loaders: [{
+            test: /\.ts$/,
+            exclude: [/\.spec\.ts$/, /node_modules/],
+            loader: 'ts'
+        }, {
+            test: /\.html$/,
+            loader: 'raw'
+        }, {
+            test: /\.scss$/,
+            include: [path.resolve(__dirname, 'src')],
+            loader: 'raw!postcss-loader!sass'
+        }, {
+            test: /\.css$/,
+            loaders: ['style-loader', 'css-loader']
+        }, {
+            test: /\.(woff2?|ttf|eot|svg)$/,
+            loader: 'url?limit=10000'
+        }, ],
 
         noParse: [
             /angular2\/bundles\/.+/
@@ -53,12 +66,15 @@ module.exports = {
             '@angular/platform-browser',
             '@angular/platform-browser-dynamic',
             'rxjs',
-            'zone.js'
+            'zone.js',
+            'ng2-bootstrap'
         ]
     },
 
     postcss: [
-        autoprefixer({ browsers: ['last 3 versions', 'Firefox ESR'] })
+        autoprefixer({
+            browsers: ['last 3 versions', 'Firefox ESR']
+        })
     ],
 
     sassLoader: {
@@ -70,7 +86,11 @@ module.exports = {
     plugins: [
         new DedupePlugin(),
         new OccurenceOrderPlugin(),
-        new CommonsChunkPlugin({name: 'vendor', filename: 'vendor.js', minChunks: Infinity}),
+        new CommonsChunkPlugin({
+            name: 'vendor',
+            filename: 'vendor.js',
+            minChunks: Infinity
+        }),
         new HtmlWebpackPlugin({
             chunksSortMode: 'none',
             filename: 'index.html',
@@ -112,4 +132,5 @@ module.exports = {
             version: false
         }
     }
-};3
+};
+3
