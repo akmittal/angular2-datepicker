@@ -7,11 +7,11 @@ This is fork of https://github.com/kekeh/mydatepicker with slight design change.
 ## Description
 Simple Angular2 date picker.
 
-![alt text](https://github.com/akmittal/angular2-datepicker/blob/master/image/mydatepicker-normal-image.png "mydatepicker normal mode")
+![alt text](https://raw.githubusercontent.com/akmittal/angular2-datepicker/master/image/mydatepicker-normal-image.png "mydatepicker normal mode")
 
 Image 1. _mydatepicker in normal mode._
 
-![alt text](https://github.com/akmittal/angular2-datepicker/blob/master/image/mydatepicker-inline-image.png "mydatepicker inline mode")
+![alt text](https://raw.githubusercontent.com/akmittal/angular2-datepicker/master/image/mydatepicker-inline-image.png "mydatepicker inline mode")
 
 Image 2. _mydatepicker in inline mode._
 

@@ -11,8 +11,7 @@
   },
 
   "files": [
-    "src/main.ts",
-    "typings/browser.d.ts"
+    "src/main.ts"
   ],
 
   "compileOnSave": false,
