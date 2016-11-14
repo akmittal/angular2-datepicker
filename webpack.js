@@ -67,7 +67,7 @@ module.exports = {
             '@angular/platform-browser-dynamic',
             'rxjs',
             'zone.js',
-            'ng2-bootstrap'
+            'ng2-bootstrap/ng2-bootstrap'
         ]
     },
 
