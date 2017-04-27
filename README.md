@@ -26,9 +26,22 @@ Image 2. _mydatepicker in inline mode._
 To install this component to an external project, follow the procedure:
 
 1. Make sure you're using Webpack and have installed `raw-loader`, `postcss-loader` and `sass-loader`.
-2. `npm install kekeh/mydatepicker`.
-3. `import {MyDatePicker} from 'MyDatePicker/src/index';`
-4. Use the following snippet inside your template:
+2. `npm install angular2-datepicker`.
+3. `import {MyDatePickerModule} from 'mydatepicker/src/my-date-picker/my-date-picker.module';`
+4. import Datepicker module
+```
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    MyDatePickerModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+```
+5. Use the following snippet inside your template:
 
    ```html
    <my-date-picker [options]="myDatePickerOptions"
