@@ -27,7 +27,7 @@ To install this component to an external project, follow the procedure:
 
 1. Make sure you're using Webpack and have installed `raw-loader`, `postcss-loader` and `sass-loader`.
 2. `npm install angular2-datepicker`.
-3. `import {MyDatePickerModule} from 'mydatepicker/src/my-date-picker/my-date-picker.module';`
+3. `import {MyDatePickerModule} from 'mydatepicker';`
 4. import Datepicker module
 ```
 @NgModule({
