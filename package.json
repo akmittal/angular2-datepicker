@@ -19,20 +19,20 @@
     "start": "./node_modules/.bin/webpack-dev-server --config webpack.js --progress"
   },
   "dependencies": {
-    "@angular/common": "^2.1.2",
-    "@angular/compiler": "2.1.2",
-    "@angular/core": "^2.1.2",
-    "@angular/forms": "2.1.2",
-    "@angular/platform-browser": "^2.1.2",
-    "@angular/platform-browser-dynamic": "^2.1.2",
+    "@angular/common": "^2.3.1",
+    "@angular/compiler": "^2.3.1",
+    "@angular/core": "^2.3.1",
+    "@angular/forms": "^2.3.1",
+    "@angular/platform-browser": "^2.3.1",
+    "@angular/platform-browser-dynamic": "^2.3.1",
     "@types/es6-shim": "^0.31.32",
     "@types/zone.js": "0.0.27",
     "bootstrap": "^3.3.7",
-    "es6-shim": "~0.35.1",
+    "es6-shim": "~0.35.2",
     "ng2-bootstrap": "1.1.16",
     "reflect-metadata": "0.1.8",
-    "rxjs": "5.0.0-rc.2",
-    "zone.js": "~0.6.26"
+    "rxjs": "5.0.0-rc.4",
+    "zone.js": "^0.7.2"
   },
   "devDependencies": {
     "css-loader": "~0.25.0",
@@ -46,7 +46,7 @@
     "style-loader": "~0.13.1",
     "ts-loader": "~1.2.0",
     "url-loader": "0.5.7",
-    "typescript": "~2.0.6",
+    "typescript": "~2.2.x",
     "webpack": "~1.13.3",
     "webpack-dev-server": "^1.16.2",
     "webpack-livereload-plugin": "~0.9.0"
