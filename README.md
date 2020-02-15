@@ -15,7 +15,7 @@ Image 1. _mydatepicker in normal mode._
 
 Image 2. _mydatepicker in inline mode._
 
-##Getting Started
+## Getting Started
 1. Fork and clone this repo
 2. npm install
 3. Open a terminal and type "npm start"
