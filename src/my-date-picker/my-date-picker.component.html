@@ -7,7 +7,7 @@
             <button type="button" class="btnpicker" (click)="openBtnClicked()"><span class="icon icon-calendar"></span></button>
         </span>
     </div>
-    <div class="selector" *ngIf="showSelector||inline" [ngClass]="{'inlinedp': inline}">
+    <div class="selector" *ngIf="(showSelector || inline)" [ngClass]="{'inlinedp': inline}">
         <div class="timepicker text-center action" [ngClass]="{'hide':!showTime}" (click)="toggleTime()">
             <span class="icon icon-calendar"></span>
         </div>
@@ -52,7 +52,7 @@
             </tbody>
 
         </table>
-        <div class="timepicker padding" [ngClass]="{'transition':showTime}" [hidden]="!showTime">
+        <div class="timepicker padding" [ngClass]="{'transition':showTime}" *ngIf="showTime">
           <timepicker [(ngModel)]="time" (ngModelChange)="changed($event)" [hourStep]="hstep" [minuteStep]="mstep" [showMeridian]="ismeridian"></timepicker>
         </div>
         <div class="timepicker text-center action" [ngClass]="{'hide':showTime}" (click)="toggleTime()">

@@ -1,14 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 
-declare var require;
-const styles: string = require('./sample-date-app.component.scss');
-const template: string = require('./sample-date-app.component.html');
-
 @Component({
     selector: 'sample-date-picker',
-    styles: [styles],
-    template
+    styleUrls: ["./sample-date-app.component.scss"],
+    templateUrl:"./sample-date-app.component.html"
 })
 
 export class SampleDateApp implements OnInit {
@@ -47,11 +43,11 @@ export class SampleDateApp implements OnInit {
         console.log('onInit(): SampleDatePicker')
     }
 
-    onDateChanged1(event) {
+    onDateChanged1(event:any) {
         console.log('onDateChanged1(): ', event.date, ' - formatted: ', event.formatted, ' - epoc timestamp: ', event.epoc);
     }
 
-    onDateChanged2(event) {
+    onDateChanged2(event:any) {
         console.log('onDateChanged2(): ', event.date, ' - formatted: ', event.formatted, ' - epoc timestamp: ', event.epoc);
     }
 }

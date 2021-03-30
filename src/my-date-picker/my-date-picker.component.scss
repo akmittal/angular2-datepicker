@@ -149,7 +149,7 @@
         background-color: rgb(224,224,224);
         //border-radius: 100%;
     }
-    
+
     .disabled {
         cursor: default !important;
         color: #CCC !important;
@@ -240,8 +240,8 @@
     }
 
     .timepicker{
-        margin: auto;
-        table-layout: fixed;
+      display: flex;
+    justify-content: center;
         width: 100%;
         padding: 5px 0px;
     }
